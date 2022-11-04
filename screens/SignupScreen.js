@@ -1,7 +1,12 @@
-import AuthContent from '../components/Auth/AuthContent';
+import AuthContent from "../components/Auth/AuthContent";
+import { createUser } from "../utils/auth";
 
 function SignupScreen() {
-  return <AuthContent />;
+  const signupHandler = ({ email, password }) => {
+    createUser(email, password);
+  };
+
+  return <AuthContent onAuthenticate={signupHandler} />;
 }
 
 export default SignupScreen;
