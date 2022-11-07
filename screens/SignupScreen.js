@@ -16,8 +16,8 @@ function SignupScreen() {
       authenticate(token);
     } catch (error) {
       Alert.alert("Authentication failed", "Could not craete user..");
+      setIsAuthenticating(false);
     }
-    setIsAuthenticating(false);
   };
 
   if (isAuthenticating) return <LoadingOverlay message="Creating user..." />;
